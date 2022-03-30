@@ -1,3 +1,4 @@
+// Creazione array utenti accettati
 const mailList = [
     "carlovanzini@gmail.com",
     "marcgene@gmail.com",
@@ -5,18 +6,39 @@ const mailList = [
     "homersimpson@hotmail.com",
     "paperella@boolean.com",
     "petergriffin@yahoo.com",
-    "javascriptèdivertente@gmail.com"
+    "javascriptisfunny@gmail.com"
 ];
-console.log(mailList);
-const userMail = prompt("Inserisci la tua mail");
-console.log(userMail);
-for(let i = 0; i < mailList.length; i++) {
-    console.log(i)
-    if(userMail == mailList[i]) {
-        alert("Puoi entrare");
-        var verify = true;
+
+// Inizializzazione variabili
+const app = document.getElementById("app");
+const check = document.getElementById("check");
+const reset = document.getElementById("reset");
+
+// Creazione elemento di output
+const h2 = document.createElement("h2");
+app.append(h2);
+
+// Eventi
+check.addEventListener("click", checkEmail);
+reset.addEventListener("click", resetFunction);
+
+// Funzioni
+// Controllo email
+function checkEmail() {
+    const userMail = document.getElementById("userMail").value;
+    // ciclo for per confronto con elementi array
+    for(let i = 0; i < mailList.length; i++) {
+        if(userMail == mailList[i]) {
+            h2.innerHTML = "Puoi entrare"
+            var verify = true;
+        }
+    }
+    // if per output alternativo
+    if(!(verify)) {
+        h2.innerHTML = "Non puoi entrare";
     }
 }
-if(!(verify)) {
-    alert("Non puoi entrare")
+// Reset elemento di output
+function resetFunction() {
+    h2.innerHTML = "";
 }
