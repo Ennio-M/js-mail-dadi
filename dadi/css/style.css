@@ -22,3 +22,11 @@ h1{
 p{
     margin: 1em;
 }
+a{
+    text-decoration: none;
+    color: black;
+    margin: .5em;
+    border: 2px solid black;
+    padding: .5em 1em;
+    border-radius: 10px;
+}
