@@ -21,7 +21,9 @@ function playFunction() {
     p_user.innerHTML = `Il tuo numero: ${userNum}`;
     if(userNum > pcNum) {
         h2.innerHTML = "Hai vinto"
-    } else {
+    } else if(userNum < pcNum){
         h2.innerHTML = "Hai perso"
+    } else {
+        h2.innerHTML = "Pareggio"
     }
 }
